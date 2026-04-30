@@ -1,0 +1,147 @@
+💼 Replace 50% of Your Work With Copilot
+The 4-Hour System That Saves You 10+ Hours Every Week
+Who this is for: Knowledge workers drowning in emails, meetings, and reports who want their time back by Friday.
+What you get: 4 modules, 12 lessons, copy-paste prompts, and real outcomes.
+What you won't get: A tour of menus, a history of AI, or a theory lecture.
+________________________________________
+⚠️ BEFORE YOU START (2 Minutes)
+What you need: Microsoft 365 Copilot (paid license). Free Copilot Chat can't access your work emails, files, or meetings — which is where all the magic happens. Ask your IT team if you're unsure.
+One setting to change now: In any Copilot chat, look for the model selector at the bottom. You have three modes:
+	Quick — fast, simple answers.
+	Auto — Copilot picks for you (default).
+	Think Deeper — slower but smarter; use this for analysis, strategy, and anything that matters.
+Rule of thumb: If you'd spend more than 5 minutes thinking about it yourself, use Think Deeper.
+________________________________________
+🎯 THE CORE SYSTEM (Memorize This)
+Everything in this course runs on one repeatable framework:
+"SEARCH"→"ANALYZE"→"CREATE" 
+SEARCH → Find anything across your company in seconds. ANALYZE → Turn raw info into insights using agents. CREATE → Ship emails, reports, and decks in minutes.
+Every lesson maps back to this framework — learn it once, use it forever.
+________________________________________
+🔥 MODULE 1 — Instant Wins (Your First 30 Minutes)
+Goal: Get 3 "holy sh*t" moments before lunch and hook yourself on the value.
+Lesson 1.1 — Summarize 200 Emails in 10 Seconds
+🎣 Hook: The Monday morning inbox problem is dead.
+🎯 Scenario: You're back from vacation with 247 unread emails; do this instead of 4 hours of triage.
+🎬 Demo Script:
+	Open Outlook and click the Copilot panel.
+	Paste the following prompt:
+📋 Copy-Paste Prompt: "For all emails received in the past 7 days (sent + received), summarize the key points, identify action items that need MY response, and prioritize them highest-to-lowest. For each item include: one-line summary, who's waiting, and urgency (🔴 today / 🟡 this week / 🟢 FYI)."
+	Review output and click items to jump to emails.
+	Bonus: "Draft replies for items 1–5 in my writing style."
+🔁 Recap: Achieve inbox zero in 15 minutes.
+________________________________________
+Lesson 1.2 — Never Take Meeting Notes Again
+🎣 Hook: The Facilitator Agent replaces your note-taker and action-item tracker.
+🎯 Scenario: Focus 100% on a 30-minute Teams meeting while getting perfect notes.
+🎬 Demo Script:
+	In the Teams invite, go to More options (...) → Copilot and other AI.
+	Toggle Record and transcribe automatically to ON.
+	Toggle Facilitator Agent to ON and click Apply.
+	After the meeting, open the Recap tab for summaries, action items, and transcripts.
+⚡ Bonus: After the meeting, Copilot also generates a video highlight reel — a narrated summary you can share with anyone who missed the call.
+🔁 Recap: Focus on people, not typing.
+________________________________________
+Lesson 1.3 — Generate a Full Report in 60 Seconds
+🎣 Hook: Deliver an executive-grade, cited report before your coffee cools.
+🎯 Scenario: A last-minute request for a "quick market analysis" due by 9 AM.
+🎬 Demo Script:
+	In Copilot, go to Tools → Researcher.
+	Paste:
+📋 Copy-Paste Prompt: "Create an executive research report on [TOPIC]. Include: Executive summary, 3 biggest trends, 2 risks/opportunities, next actions, and cite every claim."
+	Review citations and click Edit in Pages to export to Word.
+⚡ Pro Tip: For deeper analysis, switch to Think Deeper mode before running the Researcher prompt. It takes 30 seconds longer but produces significantly better citations and reasoning.
+🔁 Recap: Use Researcher the moment anyone says "look into...".
+________________________________________
+🔍 MODULE 2 — The 3-Step System (Your New Operating Model)
+Goal: Master the spine of the system: SEARCH → ANALYZE → CREATE.
+Lesson 2.1 — SEARCH: Find Anything in Your Company
+🎣 Hook: Copilot Search is Google for everything your company has created.
+🎬 Demo Script:
+	Click Search in the left sidebar (not the chat box).
+	Use keywords or project names to find files, emails, and Teams messages instantly.
+⚡ Pro Tip: Chat does things; Search finds things.
+________________________________________
+Lesson 2.2 — ANALYZE: Turn Any Data Into Insights
+🎣 Hook: You don't need Excel skills; you need the Analyst Agent.
+🎬 Demo Script:
+	Use Tools → Analyst.
+	Attach your file (Excel, Word, PDF).
+	Ask for trends, best/worst performers, and leadership recommendations.
+🔁 Recap: Feed it anything with numbers for an analyst-grade narrative.
+________________________________________
+Lesson 2.3 — CREATE: Ship Deliverables in Minutes
+🎣 Hook: Turn the Microsoft suite into a content factory.
+🎬 The Chain:
+	Email (Outlook): Draft status updates with Copilot.
+	Report (Word): Turn research into a 2-page executive brief.
+	Deck (PowerPoint): Create a presentation directly from your Word doc.
+________________________________________
+⚡ MODULE 3 — Agents That Replace Work
+Goal: Stop prompting and start delegating; agents finish jobs, not just chats.
+Lesson 3.1 — Agent Mode: Let Copilot Actually Do the Work
+🎣 Hook: You've been asking Copilot to help. Agent Mode lets it do.
+🎯 Scenario: You have a rough 3-page Word doc that needs to become a polished executive brief — restructured, tightened, formatted — in 5 minutes.
+🎬 Demo Script:
+	Open your document in Word and click the Copilot icon.
+	Toggle Agent Mode ON (top of the Copilot pane).
+	Paste this prompt:
+📋 Copy-Paste Prompt: "Restructure this document into an executive brief: add an executive summary at the top, tighten every paragraph to 2–3 sentences max, fix formatting inconsistencies, and add section headers. Keep my data and conclusions — just make it boardroom-ready."
+	Watch Copilot make changes live in the document — not in a chat bubble.
+	Review the tracked changes and accept or reject each one.
+⚡ Pro Tip: Agent Mode also works in Excel (clean data, build charts) and PowerPoint (redesign slides, fix layouts). Same toggle, same power.
+🔁 Recap: Chat suggests. Agent Mode executes. Turn it on for any task that involves more than one step.
+________________________________________
+Lesson 3.2 — Prompt Coach
+🎣 Hook: Bad prompts equal bad outputs; use Prompt Coach to get clear.
+🎬 Demo Script:
+	Go to Tools → Prompt Coach.
+	Answer its questions on Goal, Context, Source, and Expectations.
+Part	Ask Yourself
+Goal	What exactly do I want?
+Context	Who's it for? What's the background?
+Source	What files/data should it use?
+Expectations	Length, tone, format?
+⚡ Pro Tip: Once you nail a prompt, click the Save to Prompt Gallery icon. Name it, tag it, and share it with your team. Build a library so nobody starts from scratch.
+________________________________________
+Lesson 3.3 — Build Your Personal Copilot
+🎣 Hook: Teach Copilot who you are once to stop repeating yourself forever.
+🎬 Demo Script:
+	In Settings → Personalization → Custom Instructions, define your role, preferred format (e.g., Executive summary), and tone.
+	Add key projects to Saved Memories.
+________________________________________
+🚀 MODULE 4 — Automation (The 10-Hour Workweek)
+Goal: Set it once and save hours on autopilot.
+Lesson 4.1 — Schedule Your Monday Morning Brief
+🎯 Scenario: Start your week with a briefing ready, not an empty inbox.
+🎬 Demo Script:
+	Run a prompt for a "Monday morning briefing" covering emails, manager requests, and weekly priorities.
+	Click the schedule icon to set it for Every Monday at 7 AM.
+________________________________________
+Lesson 4.2 — Build Workflow Chains
+🎬 The Chain Example:
+	Search for project activity.
+	Analyst for KPI trends.
+	Researcher for benchmarks.
+	Word/Outlook to reformat and draft the delivery.
+________________________________________
+Lesson 4.3 — Copilot Pages: Your Team's Shared Brain
+🎣 Hook: Every great Copilot output dies in your chat history. Pages keeps it alive.
+🎯 Scenario: You just generated a project status summary in Copilot. Your manager and two teammates need to see it, edit it, and add their sections — without you copy-pasting into an email.
+🎬 Demo Script:
+	After any Copilot response, click Edit in Pages.
+	Your output opens in a collaborative canvas — like a living document.
+	Click Share and add your teammates.
+	Everyone can edit, add prompts, and refine — together, in real time.
+📋 Copy-Paste Prompt (to kick it off): "Create a weekly project status page with three sections: What's done, What's in progress, and What's blocked. Pull from my emails and Teams chats from the past 5 days."
+⚡ Pro Tip: Pages persist. Bookmark your most-used ones. Use them as living dashboards instead of static reports nobody updates.
+🔁 Recap: Chat is for you. Pages is for your team. If the output matters to more than one person, put it in a Page.
+________________________________________
+🎓 The Bottom Line
+The AI-First Mindset: "Before I start any task today — can Copilot do the first draft?"
+Your 24-Hour Action Plan:
+	Right now: Set up Custom Instructions + switch model selector to Auto (10 min).
+	Tomorrow morning: Run the inbox summary prompt (15 min).
+	This week: Schedule your Monday briefing + save your first prompt to the Gallery (30 min).
+	Next week: Try Agent Mode on one real document and share a Page with your team.
+
