@@ -43,3 +43,24 @@ Unlike prompt-only products, this platform scores end-to-end mission outcomes:
 - `prompts/*.md` — system prompts for model services
 - `missions/manager/*.json` — authored missions
 
+
+## Local API runtime (MVP scaffold)
+
+Run the backend locally:
+
+```bash
+python -m uvicorn app.main:app --reload
+```
+
+Run tests:
+
+```bash
+python -m pytest
+```
+
+Implemented endpoints:
+
+- `POST /v1/missions/{mission_id}/run-step`
+- `POST /v1/missions/{mission_id}/inject-event`
+- `POST /v1/missions/{mission_id}/evaluate`
+- `POST /v1/missions/{mission_id}/coach`
