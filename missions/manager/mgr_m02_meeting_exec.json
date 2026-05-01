@@ -1,0 +1,62 @@
+{
+  "mission_id": "mgr_m02_meeting_exec",
+  "version": "1.0.0",
+  "role_track": "manager",
+  "title": "Meeting to Execution in 30 Minutes",
+  "difficulty": "intermediate",
+  "estimated_minutes": 30,
+  "learning_objectives": [
+    "Convert transcripts into actionable plans",
+    "Assign owner and due date with clarity",
+    "Handle team availability disruptions"
+  ],
+  "workspace_context": {
+    "company": "Northstar Labs",
+    "user_role": "Team Manager",
+    "timezone": "America/New_York",
+    "data_sources": [
+      { "source_id": "src_meeting", "type": "meeting", "label": "Project sync transcript", "payload_ref": "payloads/m02/meeting_transcript.json" },
+      { "source_id": "src_kpi", "type": "sheet", "label": "Weekly KPI snapshot", "payload_ref": "payloads/m02/kpi_snapshot.json" },
+      { "source_id": "src_doc", "type": "doc", "label": "Project background", "payload_ref": "payloads/m02/project_context.md" }
+    ]
+  },
+  "steps": [
+    { "step_id": "s_collect", "name": "Collect", "goal": "Extract decisions and open questions", "required_actions": ["summarize", "extract_actions"] },
+    { "step_id": "s_reason", "name": "Reason", "goal": "Prioritize critical actions with dependencies", "required_actions": ["prioritize", "delegate_agent"] },
+    { "step_id": "s_execute", "name": "Execute", "goal": "Draft recap communication and tracker", "required_actions": ["draft_email", "draft_plan", "finalize_bundle"] },
+    { "step_id": "s_automate", "name": "Automate", "goal": "Create repeatable post-meeting workflow", "required_actions": ["finalize_bundle"] }
+  ],
+  "events": [
+    {
+      "event_id": "ev_owner_unavailable",
+      "trigger": { "type": "step_completed", "value": "s_reason" },
+      "effect": { "type": "inject_chat", "payload_ref": "payloads/m02/event_owner_unavailable.json" }
+    }
+  ],
+  "deliverables": [
+    { "deliverable_id": "d_recap", "type": "brief", "title": "Meeting Recap", "required_sections": ["decisions", "open_questions", "next_steps"], "max_words": 220 },
+    { "deliverable_id": "d_tracker", "type": "task_table", "title": "Action Tracker", "required_sections": ["task", "owner", "due_date", "risk"] },
+    { "deliverable_id": "d_followup", "type": "email", "title": "Follow-up Email", "required_sections": ["summary", "asks", "deadlines"] },
+    { "deliverable_id": "d_escalation", "type": "memo", "title": "Escalation Note", "required_sections": ["issue", "impact", "request"], "max_words": 120 },
+    { "deliverable_id": "d_sop", "type": "plan", "title": "Post-Meeting Automation SOP", "required_sections": ["trigger", "input", "transform", "outputs"] }
+  ],
+  "rubric": {
+    "weights": {
+      "outcome": 0.25,
+      "decision_quality": 0.20,
+      "communication": 0.20,
+      "risk": 0.15,
+      "efficiency": 0.10,
+      "automation_readiness": 0.10
+    },
+    "criteria": [
+      { "criterion_id": "c1", "description": "Actionability", "scoring_guide": "Every critical action has owner and date" },
+      { "criterion_id": "c2", "description": "Dependency handling", "scoring_guide": "Risks and blockers are made explicit" }
+    ]
+  },
+  "pass_rules": {
+    "min_total_score": 78,
+    "must_complete_deliverables": true,
+    "max_attempts_for_mastery_badge": 3
+  }
+}

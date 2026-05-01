@@ -1,0 +1,85 @@
+{
+  "mission_id": "mgr_m01_inbox_command",
+  "version": "1.0.0",
+  "role_track": "manager",
+  "title": "Monday Inbox Command Center",
+  "difficulty": "beginner",
+  "estimated_minutes": 25,
+  "learning_objectives": [
+    "Prioritize mixed-priority inbound requests",
+    "Draft stakeholder-ready responses quickly",
+    "Turn inbox into a time-blocked execution plan",
+    "Save the workflow for weekly automation"
+  ],
+  "workspace_context": {
+    "company": "Northstar Labs",
+    "user_role": "Team Manager",
+    "timezone": "America/New_York",
+    "data_sources": [
+      { "source_id": "src_emails_week", "type": "email", "label": "Weekly inbox", "payload_ref": "payloads/m01/emails_week.json" },
+      { "source_id": "src_tasks_open", "type": "task", "label": "Open tasks", "payload_ref": "payloads/m01/open_tasks.json" },
+      { "source_id": "src_calendar", "type": "doc", "label": "Calendar snapshot", "payload_ref": "payloads/m01/calendar_snapshot.json" }
+    ]
+  },
+  "steps": [
+    {
+      "step_id": "s_collect",
+      "name": "Collect",
+      "goal": "Extract actions and obligations from inbound context",
+      "recommended_agent": "chief_of_staff",
+      "required_actions": ["open_source", "summarize", "extract_actions"]
+    },
+    {
+      "step_id": "s_reason",
+      "name": "Reason",
+      "goal": "Prioritize by urgency and impact and surface risks",
+      "recommended_agent": "risk_reviewer",
+      "required_actions": ["prioritize", "validate_claims", "delegate_agent"]
+    },
+    {
+      "step_id": "s_execute",
+      "name": "Execute",
+      "goal": "Draft responses and create a time-blocked action plan",
+      "recommended_agent": "comms_writer",
+      "required_actions": ["draft_email", "draft_plan", "finalize_bundle"]
+    },
+    {
+      "step_id": "s_automate",
+      "name": "Automate",
+      "goal": "Save a reusable Monday triage workflow template",
+      "required_actions": ["finalize_bundle"]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "ev_vp_urgent_status",
+      "trigger": { "type": "time_elapsed", "value": 12 },
+      "effect": { "type": "inject_email", "payload_ref": "payloads/m01/event_vp_status.json" }
+    }
+  ],
+  "deliverables": [
+    { "deliverable_id": "d_priority_table", "type": "task_table", "title": "Priority Table", "required_sections": ["P1", "P2", "P3"] },
+    { "deliverable_id": "d_email_drafts", "type": "email", "title": "Top 5 Email Drafts", "required_sections": ["subject", "body"] },
+    { "deliverable_id": "d_day_plan", "type": "plan", "title": "Today Action Plan", "required_sections": ["time_blocks", "dependencies", "risks"] },
+    { "deliverable_id": "d_workflow", "type": "plan", "title": "Monday Triage Workflow", "required_sections": ["trigger", "inputs", "agent_steps", "outputs"] }
+  ],
+  "rubric": {
+    "weights": {
+      "outcome": 0.25,
+      "decision_quality": 0.20,
+      "communication": 0.20,
+      "risk": 0.15,
+      "efficiency": 0.10,
+      "automation_readiness": 0.10
+    },
+    "criteria": [
+      { "criterion_id": "c1", "description": "Priority logic", "scoring_guide": "Tasks are ranked with clear urgency and impact rationale" },
+      { "criterion_id": "c2", "description": "Draft quality", "scoring_guide": "Responses are concise, clear, and stakeholder-appropriate" }
+    ]
+  },
+  "pass_rules": {
+    "min_total_score": 75,
+    "must_complete_deliverables": true,
+    "max_attempts_for_mastery_badge": 3
+  }
+}

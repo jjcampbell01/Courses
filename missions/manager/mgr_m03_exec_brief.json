@@ -1,0 +1,62 @@
+{
+  "mission_id": "mgr_m03_exec_brief",
+  "version": "1.0.0",
+  "role_track": "manager",
+  "title": "Executive Brief Under Deadline Compression",
+  "difficulty": "advanced",
+  "estimated_minutes": 35,
+  "learning_objectives": [
+    "Synthesize fragmented sources into executive narrative",
+    "Address uncertainty and conflicting KPI evidence",
+    "Recommend strategy with tradeoff transparency"
+  ],
+  "workspace_context": {
+    "company": "Northstar Labs",
+    "user_role": "Team Manager",
+    "timezone": "America/New_York",
+    "data_sources": [
+      { "source_id": "src_market", "type": "doc", "label": "Market notes", "payload_ref": "payloads/m03/market_notes.md" },
+      { "source_id": "src_perf", "type": "sheet", "label": "Performance sheet", "payload_ref": "payloads/m03/performance_sheet.json" },
+      { "source_id": "src_threads", "type": "email", "label": "Stakeholder threads", "payload_ref": "payloads/m03/stakeholder_threads.json" },
+      { "source_id": "src_risk", "type": "doc", "label": "Risk register", "payload_ref": "payloads/m03/risk_register.md" }
+    ]
+  },
+  "steps": [
+    { "step_id": "s_collect", "name": "Collect", "goal": "Compile facts, assumptions, and unknowns", "required_actions": ["open_source", "summarize", "validate_claims"] },
+    { "step_id": "s_reason", "name": "Reason", "goal": "Extract trends, risks, and opportunities", "required_actions": ["prioritize", "delegate_agent", "validate_claims"] },
+    { "step_id": "s_execute", "name": "Execute", "goal": "Write executive brief and leadership email", "required_actions": ["draft_memo", "draft_email", "finalize_bundle"] },
+    { "step_id": "s_automate", "name": "Automate", "goal": "Save research-to-brief chain", "required_actions": ["finalize_bundle"] }
+  ],
+  "events": [
+    {
+      "event_id": "ev_deadline_and_conflict",
+      "trigger": { "type": "time_elapsed", "value": 15 },
+      "effect": { "type": "new_risk", "payload_ref": "payloads/m03/event_conflicting_kpi.json" }
+    }
+  ],
+  "deliverables": [
+    { "deliverable_id": "d_exec_brief", "type": "brief", "title": "Executive Brief", "required_sections": ["executive_summary", "trends", "risks_opportunities", "recommendation", "assumptions_confidence"], "max_words": 700 },
+    { "deliverable_id": "d_evidence", "type": "plan", "title": "Evidence Checklist", "required_sections": ["claim", "source", "confidence", "verification_status"] },
+    { "deliverable_id": "d_cover_email", "type": "email", "title": "Leadership Cover Email", "required_sections": ["headline", "decision_needed", "deadline"] },
+    { "deliverable_id": "d_workflow", "type": "plan", "title": "Research-to-Brief Workflow", "required_sections": ["trigger", "inputs", "analysis_steps", "outputs"] }
+  ],
+  "rubric": {
+    "weights": {
+      "outcome": 0.25,
+      "decision_quality": 0.20,
+      "communication": 0.20,
+      "risk": 0.15,
+      "efficiency": 0.10,
+      "automation_readiness": 0.10
+    },
+    "criteria": [
+      { "criterion_id": "c1", "description": "Strategic clarity", "scoring_guide": "Recommendation is specific with tradeoffs" },
+      { "criterion_id": "c2", "description": "Evidence hygiene", "scoring_guide": "Conflicting data is disclosed and labeled" }
+    ]
+  },
+  "pass_rules": {
+    "min_total_score": 80,
+    "must_complete_deliverables": true,
+    "max_attempts_for_mastery_badge": 4
+  }
+}
