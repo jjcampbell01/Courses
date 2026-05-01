@@ -3,180 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI WorkOS Academy</title>
+    <title>AI WorkOS Academy | Mission Lab</title>
     <meta
       name="description"
-      content="AI WorkOS Academy provides mission-driven training docs, schemas, and prompt systems for operational AI teams."
+      content="Hands-on AI training lab where learners run mission workflows, generate artifacts, and receive automated evaluations and coaching."
     />
     <style>
       :root {
-        --bg: #0b1020;
-        --bg-soft: #121a31;
-        --card: #161f3a;
-        --text: #eaf0ff;
-        --muted: #b2bfdc;
-        --line: #2f3f73;
-        --brand: #7aa2ff;
-        --brand-2: #8ae3ff;
-        --ok: #84f5b7;
+        --bg: #091025;
+        --bg-soft: #0f1a3a;
+        --card: #162345;
+        --line: #2f4688;
+        --text: #e8eeff;
+        --muted: #aebbe4;
+        --brand: #73a0ff;
+        --brand-2: #7de6ff;
+        --ok: #7ef0b5;
       }
-
       * { box-sizing: border-box; }
-
       body {
         margin: 0;
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: radial-gradient(circle at 0% 0%, #1a2a58 0%, var(--bg) 56%);
         color: var(--text);
-        background: radial-gradient(circle at top, #1a2650 0%, var(--bg) 50%);
-        min-height: 100vh;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       }
-
-      .wrap {
-        width: min(1100px, calc(100% - 2rem));
-        margin: 0 auto;
+      .wrap { width: min(1150px, calc(100% - 2rem)); margin: 0 auto; }
+      header { padding: 2rem 0 1.4rem; }
+      h1 { margin: 0.3rem 0; font-size: clamp(1.7rem, 3.2vw, 2.8rem); }
+      .sub { color: var(--muted); max-width: 70ch; }
+      .grid { display: grid; gap: 1rem; grid-template-columns: 1.1fr 1fr; align-items: start; }
+      .panel { background: linear-gradient(180deg, #142149, var(--card)); border: 1px solid var(--line); border-radius: 14px; padding: 1rem; }
+      .panel h2 { margin: 0 0 0.8rem; font-size: 1.1rem; }
+      label { display:block; margin: 0.7rem 0 0.35rem; font-weight: 600; }
+      select,input,textarea,button {
+        width: 100%; border-radius: 10px; border: 1px solid var(--line); background: #101a37; color: var(--text); padding: 0.68rem; font: inherit;
       }
-
-      header {
-        padding: 4rem 0 2rem;
-      }
-
-      .badge {
-        display: inline-block;
-        padding: 0.35rem 0.7rem;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        color: var(--brand-2);
-        font-size: 0.85rem;
-        background: #101a36;
-      }
-
-      h1 {
-        margin: 1rem 0 0.75rem;
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        line-height: 1.15;
-      }
-
-      .sub {
-        margin: 0;
-        color: var(--muted);
-        max-width: 72ch;
-        font-size: 1.05rem;
-      }
-
-      .grid {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        margin: 2rem 0;
-      }
-
-      .card {
-        background: linear-gradient(180deg, #1a2446 0%, var(--card) 100%);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 1.1rem 1.1rem 1rem;
-      }
-
-      .card h2 {
-        margin-top: 0;
-        margin-bottom: 0.6rem;
-        font-size: 1.1rem;
-      }
-
-      .card p,
-      .card li {
-        color: var(--muted);
-      }
-
-      ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
-
-      .status {
-        margin: 0 0 1.5rem;
-        border: 1px solid #335f49;
-        border-radius: 12px;
-        background: #0f2a21;
-        color: var(--ok);
-        padding: 0.9rem 1rem;
-      }
-
-      .cta {
-        display: inline-block;
-        margin-top: 0.4rem;
-        color: #081127;
-        background: linear-gradient(90deg, var(--brand), var(--brand-2));
-        border: 0;
-        font-weight: 700;
-        text-decoration: none;
-        border-radius: 10px;
-        padding: 0.65rem 1rem;
-      }
-
-      footer {
-        color: var(--muted);
-        border-top: 1px solid var(--line);
-        padding: 1.6rem 0 2.2rem;
-        margin-top: 1rem;
-        font-size: 0.95rem;
-      }
-
-      code {
-        background: #111c3a;
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        padding: 0.08rem 0.35rem;
-      }
+      textarea { min-height: 90px; resize: vertical; }
+      button { cursor: pointer; background: linear-gradient(90deg, var(--brand), var(--brand-2)); color: #071026; border: 0; font-weight: 700; margin-top: 0.9rem; }
+      .row { display:flex; gap:0.6rem; }
+      .row > * { flex:1; }
+      .status { margin-top: 0.8rem; font-size: 0.92rem; color: var(--ok); }
+      .muted { color: var(--muted); font-size: 0.92rem; }
+      .log { max-height: 520px; overflow: auto; display: grid; gap: 0.75rem; }
+      .item { border: 1px solid var(--line); border-radius: 10px; padding: 0.75rem; background: #101a36; }
+      .item h3 { margin:0 0 0.35rem; font-size:0.95rem; color: var(--brand-2); }
+      code { background:#0e1630; border:1px solid var(--line); border-radius:6px; padding: 0.07rem 0.3rem; }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
     <div class="wrap">
       <header>
-        <span class="badge">AI WorkOS Academy</span>
-        <h1>Build reliable AI operations teams with mission-first workflows.</h1>
-        <p class="sub">
-          This site now presents a real landing experience instead of the placeholder page. Use the academy
-          resources below to align architecture, execution, and quality checks across assistants, simulators,
-          evaluators, and coaching workflows.
-        </p>
+        <p class="muted">AI WorkOS Academy · Interactive Mission Lab</p>
+        <h1>Train people to use AI on real work missions — not prompt trivia.</h1>
+        <p class="sub">This page is now a working tool: pick a mission, run each execution step, generate artifacts, then score and coach the attempt using the live backend API.</p>
       </header>
 
-      <p class="status">✅ Site status: live on Netlify static hosting.</p>
+      <div class="grid">
+        <section class="panel">
+          <h2>Mission Runner</h2>
+          <div class="row">
+            <div>
+              <label for="mission">Mission ID</label>
+              <select id="mission">
+                <option value="mgr_m01_inbox_command">mgr_m01_inbox_command</option>
+                <option value="mgr_m02_meeting_exec">mgr_m02_meeting_exec</option>
+                <option value="mgr_m03_exec_brief">mgr_m03_exec_brief</option>
+              </select>
+            </div>
+            <div>
+              <label for="step">Step ID</label>
+              <select id="step">
+                <option value="s_collect">s_collect</option>
+                <option value="s_reason">s_reason</option>
+                <option value="s_execute">s_execute</option>
+                <option value="s_automate">s_automate</option>
+              </select>
+            </div>
+          </div>
 
-      <section class="grid" aria-label="Core resources">
-        <article class="card">
-          <h2>Architecture & Product Docs</h2>
-          <p>Start with the system overview and design decisions to align teams on operating model and APIs.</p>
-          <ul>
-            <li><code>docs/architecture.md</code></li>
-            <li><code>docs/api.md</code></li>
-          </ul>
-        </article>
+          <label for="input">What did the learner do?</label>
+          <textarea id="input" placeholder="Example: Extracted key risks from inbox and drafted stakeholder update with mitigation options."></textarea>
 
-        <article class="card">
-          <h2>Mission System</h2>
-          <p>Define and execute standardized missions using the schema and manager mission templates.</p>
-          <ul>
-            <li><code>schemas/mission.schema.json</code></li>
-            <li><code>missions/manager/*.json</code></li>
-          </ul>
-        </article>
+          <div class="row">
+            <button id="runBtn">Run Step</button>
+            <button id="eventBtn" type="button">Inject Event</button>
+          </div>
 
-        <article class="card">
-          <h2>Prompt Ops</h2>
-          <p>Operational prompts are organized by role for assistance, simulation, evaluation, and coaching.</p>
-          <ul>
-            <li><code>prompts/assist.md</code></li>
-            <li><code>prompts/simulate.md</code></li>
-            <li><code>prompts/evaluate.md</code> / <code>prompts/coach.md</code></li>
-          </ul>
-        </article>
-      </section>
+          <div class="row">
+            <button id="evalBtn" type="button">Evaluate Attempt</button>
+            <button id="coachBtn" type="button">Get Coaching</button>
+          </div>
+          <p class="status" id="status">Ready. Enter context and run a mission step.</p>
+          <p class="muted">API base: same origin (<code>/v1/missions/*</code>). Works on Netlify with backend proxy or local FastAPI.</p>
+        </section>
 
-      <a class="cta" href="./docs/architecture.md">Start with Architecture</a>
-
-      <footer>
-        Need a full application UI? Set your frontend output directory in <code>netlify.toml</code> using
-        <code>[build] publish = "..."</code> and redeploy.
-      </footer>
+        <section class="panel">
+          <h2>Attempt Log</h2>
+          <div class="log" id="log"></div>
+        </section>
+      </div>
     </div>
+
+    <script>
+      const mission = document.getElementById('mission');
+      const step = document.getElementById('step');
+      const input = document.getElementById('input');
+      const status = document.getElementById('status');
+      const log = document.getElementById('log');
+
+      const state = {
+        userId: 'demo_user',
+        attemptId: `attempt_${Date.now()}`,
+        artifacts: [],
+        evaluation: null,
+      };
+
+      function addLog(title, payload) {
+        const el = document.createElement('article');
+        el.className = 'item';
+        el.innerHTML = `<h3>${title}</h3><pre>${JSON.stringify(payload, null, 2)}</pre>`;
+        log.prepend(el);
+      }
+
+      async function post(path, body) {
+        const res = await fetch(path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body ?? {}) });
+        if (!res.ok) throw new Error(await res.text());
+        return res.json();
+      }
+
+      document.getElementById('runBtn').onclick = async () => {
+        try {
+          status.textContent = 'Running step...';
+          const data = await post(`/v1/missions/${mission.value}/run-step`, {
+            user_id: state.userId,
+            attempt_id: state.attemptId,
+            step_id: step.value,
+            user_input: input.value || 'No input provided',
+            selected_agent: 'default_assistant'
+          });
+          state.artifacts.push(...(data.artifacts_generated || []));
+          addLog('Run Step Result', data);
+          status.textContent = `Step completed. Artifacts: ${state.artifacts.length}`;
+        } catch (e) { status.textContent = `Error: ${e.message}`; }
+      };
+
+      document.getElementById('eventBtn').onclick = async () => {
+        try {
+          const data = await post(`/v1/missions/${mission.value}/inject-event`, {});
+          addLog('Injected Runtime Event', data);
+          status.textContent = 'Event injected into mission context.';
+        } catch (e) { status.textContent = `Error: ${e.message}`; }
+      };
+
+      document.getElementById('evalBtn').onclick = async () => {
+        try {
+          const data = await post(`/v1/missions/${mission.value}/evaluate`, {
+            user_id: state.userId,
+            attempt_id: state.attemptId,
+            artifacts: state.artifacts,
+          });
+          state.evaluation = data;
+          addLog('Evaluation', data);
+          status.textContent = `Evaluation complete: ${data.pass_fail.toUpperCase()} (${data.total_score})`;
+        } catch (e) { status.textContent = `Error: ${e.message}`; }
+      };
+
+      document.getElementById('coachBtn').onclick = async () => {
+        try {
+          if (!state.evaluation) throw new Error('Run evaluation first.');
+          const data = await post(`/v1/missions/${mission.value}/coach`, {
+            user_id: state.userId,
+            attempt_id: state.attemptId,
+            evaluation: state.evaluation,
+          });
+          addLog('Coaching Plan', data);
+          status.textContent = 'Coaching plan generated.';
+        } catch (e) { status.textContent = `Error: ${e.message}`; }
+      };
+    </script>
   </body>
 </html>
